@@ -54,7 +54,7 @@ class DoctorController extends Controller
             'role'=>1
 
         ]);
-        return  redirect('doctor/');
+        return  redirect()->back()->withErrors(['msg'=>"doctor created successfully"]);
     }
     public function allDoctors()//show all doctors for admin
     {

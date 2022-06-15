@@ -1,6 +1,9 @@
 @extends('layout.master',['head_bar'=>1,'subject'=>"Add Doctor ",'branch'=>'','sub_branch'=>'','addDoctor'=>''])
 @section('content')
     <div class="container">
+        @if($errors->any())
+            <div class=" alert alert-danger">{{$errors->first()}}</div>
+        @endif
         <form action="{{route('doctor.store')}}" method="post" class="d-flex flex-column p-5 add_doctor" >
             @csrf
             <h4>Add Doctor</h4>

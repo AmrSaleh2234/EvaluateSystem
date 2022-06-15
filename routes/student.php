@@ -16,7 +16,7 @@ Route::middleware(['Student'])->group(function (){
 
 });
 //admin make this actions
-Route::middleware(['Admin'])->group(function (){
+Route::middleware(['AdminAndDoctor'])->group(function (){
     Route::get('student/all_student',[StudentController::class,'allStudent'])->name('student.allStudent');
     Route::get('student/{data}',[StudentController::class,'show'])->name('student.show');
     Route::get('student/delete/{data}',[StudentController::class,'destroy'])->name('student.delete');

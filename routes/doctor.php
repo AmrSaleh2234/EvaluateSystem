@@ -6,7 +6,7 @@ use App\Http\Controllers\Actors\DoctorController;
 Route::middleware(['Admin'])->group(function (){
     Route::get('doctor/all',[DoctorController::class,'allDoctors'])->name('doctor.all');
     Route::get('doctor/delete/{user}',[DoctorController::class,'destroy'])->name('doctor.delete');
-    Route::resource('doctor', 'Actors\DoctorController');
+
 
 });
 
@@ -19,3 +19,4 @@ Route::middleware(['AdminAndDoctor'])->group(function (){
     Route::get("proctoring-mobile/{quiz}/{user}",[\App\Http\Controllers\WindowLog::class,'mobileDetect'])->name("proctoring.mobile");
     Route::get("proctoring-voice/{quiz}/{user}",[\App\Http\Controllers\WindowLog::class,'voice'])->name("proctoring.voice");
 });
+Route::resource('doctor', 'Actors\DoctorController');
