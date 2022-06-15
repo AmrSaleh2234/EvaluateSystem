@@ -117,7 +117,7 @@ class CourseController extends Controller
     }
     /*---------------------------------------------for student -------------------------------------------------*/
 
-    public function chooseCourse()//thi show all courses to student
+    public function chooseCourse()//this show all courses to student
     {
         $data = Course::all();
 
@@ -155,7 +155,7 @@ class CourseController extends Controller
         $user->course()->attach($course);
 
 
-        return redirect('student/choose_course');
+        return redirect()->route('course.choose_course')->withErrors(['msg'=>'course added successfully']);
     }
 
     public function deleteCourseToStudent(Course $course)//student delete course from himself

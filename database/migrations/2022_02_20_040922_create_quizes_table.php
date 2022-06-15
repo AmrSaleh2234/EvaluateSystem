@@ -20,6 +20,7 @@ return new class extends Migration
             $table->date('start_time');
             $table->tinyInteger('number_clock');
             $table->integer('course_id');
+            $table->integer('angle');
         });
     }
 

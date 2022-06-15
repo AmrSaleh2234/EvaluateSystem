@@ -11,10 +11,15 @@
 
             </header>
             <div class="row add_quiz">
-                <div class="col-4 ">
+                <div class="col-2 ">
                     <label>Quiz Name</label>
                     <br>
                     <input type="text" name="quizName" class="quiz_name" placeholder="Type here">
+                </div>
+                <div class="col-2 ">
+                    <label>angle of head student </label>
+                    <br>
+                    <input type="text" name="angle" class="quiz_name" placeholder="Type here">
                 </div>
                 <div class="col-2">
                     <label>Booking Dates</label>
@@ -29,7 +34,7 @@
                 </div>
 
                 <div class="col-3">
-                    <label>quiz length</label>
+                    <label>quiz length in minutes</label>
                     <br>
                     <input type="text" name="clock" placeholder="Type here">
                     <i class="fa-solid fa-circle-question"></i>

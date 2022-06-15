@@ -79,6 +79,7 @@
         }
     }
 </style>
+
 <body>
 <div id="snackbar">Don't try to open new window or any other applications. We are Monitoring you!</div>
 
@@ -151,7 +152,6 @@
                 </button>
 
             </div>
-
         </form>
     </div>
 </section>
@@ -261,7 +261,8 @@
                             'imgData': res,
                             'voice_db': average,
                             'testid': {{$quiz->id}},
-                            'user_id': {{auth()->user()->id}}
+                            'user_id': {{auth()->user()->id}},
+                            'angle': {{$quiz->angle}}
                         }
                     },
                     function (data) {

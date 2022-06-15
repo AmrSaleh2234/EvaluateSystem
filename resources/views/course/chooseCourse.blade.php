@@ -2,9 +2,10 @@
 
 @section('content')
 
-
-
     <div class="container pt-4">
+        @if($errors->any())
+            <div class=" alert alert-success">{{$errors->first()}}</div>
+        @endif
         <div class="head_dashboard d-flex align-items-center justify-content-between">
             <h2>Choose Your Courses</h2>
             <form class="input-group rounded search_input  " id="form_search_course"
@@ -16,7 +17,6 @@
                        onclick="submitSearchCourseForm()">
                     <i class="fas fa-search"></i>
                 </label>
-
             </form>
         </div>
 
@@ -44,10 +44,5 @@
             @endforeach
         </div>
     </div>
-
-
-
-
-
 
 @stop

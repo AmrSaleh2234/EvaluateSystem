@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Quiz extends Model
 {
     use HasFactory;
-    protected  $fillable=['name','date','start_time','number_clock','course_id'];
+    protected  $fillable=['name','date','start_time','number_clock','course_id','angle'];
     public $timestamps = false;
 
 

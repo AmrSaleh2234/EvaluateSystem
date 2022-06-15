@@ -9,6 +9,7 @@ use App\Models\Quiz;
 use App\Models\user;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Nette\Utils\DateTime;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use App\Http\Controllers\ClientController;
@@ -51,8 +52,8 @@ class QuizController extends Controller
             'date' => $request->date,
             'start_time' => $request->start_time,
             'number_clock' => $request->clock,
-
-            'course_id' => $course->id
+            'course_id' => $course->id,
+            'angle'=>$request->angle ,
 
         ]);
         $i = 0;//this variable for index in option in question
@@ -116,11 +117,13 @@ class QuizController extends Controller
         $currentTime = Carbon::now('EET')->format('H:i:s');
         $date = date('Y-m-d', strtotime("$quiz->date"));
         $time = date('H:i:s', strtotime("$quiz->start_time"));
-//        $timeEnd=$time->add(new DateInterval('PT' . $quiz->number_clock . 'M'));
-        if ($currentTime >=$time && $currentDate == $date)
+        $timeEnd = Carbon::parse($time)
+            ->addMinutes($quiz->number_clock)->format("H:i:s");
+
+        if ($currentTime >=$time && $currentDate == $date && $currentTime<=$timeEnd)
             return view("quiz.verification",compact("id","course"));
         else
-            return Redirect::back()->withErrors(['msg' => 'quiz time not start']);
+            return redirect()->back()->withErrors(['msg' => 'quiz time not start']);
 
 
     }

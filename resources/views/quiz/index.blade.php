@@ -2,7 +2,7 @@
 @extends('layout.master2',['subject'=>"$course->name / ",'branch'=>'All Quizzes ','sub_branch'=>'','activeQuize'=>'active'])
 @section('content')
     @if($errors->any())
-        <div class="alert-danger">{{$errors->first()}}</div>
+        <div class=" alert alert-danger">{{$errors->first()}}</div>
     @endif
     <div class="container-fluid">
         @foreach($course->quiz as $item)
