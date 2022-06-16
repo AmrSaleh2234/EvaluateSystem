@@ -1,7 +1,7 @@
 @extends('layout.master',['addCourse'=>''])
 @section('content')
     <div class="container-fluid">
-        <form method="POST" onsubmit='return validateForm()' action="{{route('course.store')}}"
+        <form name="myform" method="POST" onsubmit='return validateForm()' action="{{route('course.store')}}"
               enctype="multipart/form-data">
             @csrf
             <div class="form-group">

@@ -47,6 +47,7 @@ class QuizController extends Controller
 
     public function store(Request $request, course $course)
     {
+
         $quiz = Quiz::create([
             'name' => $request->quizName,
             'date' => $request->date,

@@ -14,17 +14,17 @@
                 <div class="col-2 ">
                     <label>Quiz Name</label>
                     <br>
-                    <input type="text" name="quizName" class="quiz_name" placeholder="Type here">
+                    <input type="text" name="quizName" class="quiz_name" placeholder="Type here" required>
                 </div>
                 <div class="col-2 ">
                     <label>angle of head student </label>
                     <br>
-                    <input type="text" name="angle" class="quiz_name" placeholder="Type here">
+                    <input type="text" name="angle" class="quiz_name" placeholder="Type here" required>
                 </div>
                 <div class="col-2">
                     <label>Booking Dates</label>
                     <br>
-                    <input type="date" name ="date" placeholder="Type here">
+                    <input type="date" name ="date" placeholder="Type here" required>
                 </div>
                <div class="col-3">
                     <label>Start Time</label>
@@ -36,7 +36,7 @@
                 <div class="col-3">
                     <label>quiz length in minutes</label>
                     <br>
-                    <input type="text" name="clock" placeholder="Type here">
+                    <input type="text" name="clock" placeholder="Type here" required>
                     <i class="fa-solid fa-circle-question"></i>
                 </div>
             </div>
@@ -55,8 +55,8 @@
                                     Choices
                                 </button>
                                 <ul class="dropdown-menu w-100  " aria-labelledby="dropdownMenuButton1">
-                                    <li><input type="text" placeholder="  Enter Choice 1" name="choose1[]"></li>
-                                    <li><input type="text" placeholder="  Enter Choice 2" name="choose2[]"></li>
+                                    <li><input type="text" placeholder="  Enter Choice 1" name="choose1[]" required></li>
+                                    <li><input type="text" placeholder="  Enter Choice 2" name="choose2[]" required></li>
                                     <li><input type="text" placeholder="  Enter Choice 3 (optional)" name="choose3[]">
                                     </li>
                                     <li><input type="text" placeholder="  Enter Choice 4 (optional)" name="choose4[]">
@@ -87,15 +87,8 @@
 
 
 
-
-
-
-
-
-            <div class="d-flex justify-content-end align-items-center add_question_button" >
-                <h4 onclick="newrow()" style ="cursor: pointer">add question</h4>
-
-
+            <div class="d-flex justify-content-end align-items-center add_question_button" style ="cursor: pointer">
+                <h4 onclick="newrow()" >add question</h4>
                 <i class="fa-solid fa-square-plus"></i>
             </div>
 

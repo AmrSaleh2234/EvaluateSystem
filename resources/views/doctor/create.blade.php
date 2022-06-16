@@ -4,7 +4,7 @@
         @if($errors->any())
             <div class=" alert alert-danger">{{$errors->first()}}</div>
         @endif
-        <form action="{{route('doctor.store')}}" onsubmit='return validateForm()' method="post" class="d-flex flex-column p-5 add_doctor" >
+        <form name="myform" action="{{route('doctor.store')}}" onsubmit='return validateForm()' method="post" class="d-flex flex-column p-5 add_doctor" >
             @csrf
             <h4>Add Doctor</h4>
             <input type="text" name="name" placeholder="  Enter Name" required>
