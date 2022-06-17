@@ -115,7 +115,7 @@
                                     <br>
                                     <button id="btn-capture" type="button"
                                             class="btn btn-primary justify-content-center m-auto mt-3"
-                                            style="width:70%">
+                                            style="width:70%;background: #7212a9">
                                         Capture Image
                                     </button>
                                     <br><br>
@@ -124,7 +124,7 @@
                                 </div>
 
                                 <div class="d-flex justify-content-center">
-                                    <button type="submit" class="btn btn-primary " style="width: 72%">
+                                    <button type="submit" class="btn btn-primary " style="width: 72%; background: #7212a9">
                                         {{ __('Register') }}
                                     </button>
 

@@ -106,6 +106,13 @@ class CourseController extends Controller
      */
     public function updateDescription(Request $request, Course $course)//get data from form and update it
     {
+        $validator = Validator::make($request->all(),[
+           'description'=>'required|string'
+        ]);
+        if($validator->fails())
+        {
+            return redirect()->back()->withErrors($validator)->withInput($request->all());
+        }
         $course->description = $request->description;
         $course->update();
         return view('course.show', compact('course'));
@@ -113,6 +120,13 @@ class CourseController extends Controller
 
     public function updateAnnouncement(Request $request, Course $course)//get data from form and update it
     {
+        $validator = Validator::make($request->all(),[
+            'announce'=>'required|string'
+        ]);
+        if($validator->fails())
+        {
+            return redirect()->back()->withErrors($validator)->withInput($request->all());
+        }
         $course->announce = $request->announce;
         $course->update();
 
@@ -188,14 +202,24 @@ class CourseController extends Controller
 
     public function addAndUpdateDoctorToCourse(course $course)
     {
-        $data=user::all()->where('role','1');
+        $ids=[];
+        foreach ($course->doctor as $item)
+        {
+            array_push($ids,$item->id);
+        }
+        $data=user::where('role','1')->whereNotIn('id', $ids)->get();
         return view('course.addDoctotToCourse',compact('data','course'));
     }
 
     public function storeAndUpdateDoctorToCourse( course $course,user $user)
     {
         $user->course()->attach($course);
-        return back();
+        return redirect()->back()->withErrors(['msg'=>'doctor added successfully ']);
+    }
+    public function deleteDoctorFromCourse( course $course,user $user)
+    {
+        $user->course()->detach($course);
+        return redirect()->back()->withErrors(['msg'=>'doctor deleted successfully ']);
     }
 
     /**

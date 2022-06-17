@@ -15,6 +15,7 @@ Route::middleware(['AdminAndDoctor'])->group(function (){
 
     Route::get('course/addUpdateDoctorCourse/{course}',[CourseController::class,'addAndUpdateDoctorToCourse'])->name('course.addUpdateDoctorCourse');
     Route::get('course/storeUpdateDoctorCourse/{course}/{user}',[CourseController::class,'storeAndUpdateDoctorToCourse'])->name('course.storeUpdateDoctorCourse');
+    Route::get('course/deleteDctorFromCourse/{course}/{user}',[CourseController::class,'deleteDoctorFromCourse'])->name('course.deleteDoctor');
     Route::resource('course', 'CourseController');
 });
 
