@@ -9,6 +9,7 @@ use App\Models\Quiz;
 use App\Models\user;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Nette\Utils\DateTime;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
@@ -47,6 +48,18 @@ class QuizController extends Controller
 
     public function store(Request $request, course $course)
     {
+        $validator = Validator::make($request->all(),[
+            'quizName' => 'required|string',
+            'date' => 'required|date',
+            'start_time' => 'required',
+            'clock' => 'required|numeric|max:180|min:5',
+            'angle'=>'required|numeric|max:50|min:35',
+            'question.*'=>'required'
+        ]);
+        if ($validator->fails())
+        {
+            return redirect()->back()->withErrors($validator)->withInput($request->all());
+        }
 
         $quiz = Quiz::create([
             'name' => $request->quizName,

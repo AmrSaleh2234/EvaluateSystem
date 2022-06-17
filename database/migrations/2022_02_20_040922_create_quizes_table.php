@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name',100);
             $table->date('date');
             $table->date('start_time');
-            $table->tinyInteger('number_clock');
+            $table->Integer('number_clock');
             $table->integer('course_id');
             $table->integer('angle');
         });

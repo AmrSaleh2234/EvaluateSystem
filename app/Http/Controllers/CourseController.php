@@ -6,6 +6,7 @@ use App\Http\traits\ImageSave;
 use App\Models\course;
 use App\Models\user;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 
 class CourseController extends Controller
@@ -43,6 +44,17 @@ class CourseController extends Controller
      */
     public function store(Request $request)//this store course data get by form
     {
+        $validator = Validator::make($request->all(),[
+            'name'=>'required|unique:courses',
+            'announce'=>'required|string',
+            'description'=>'required|string',
+            'creditHours'=>'required|numeric|min:1|max:4',
+            'photo'=>'mimes:jpeg,jpg,png,gif|required|max:10000'
+        ]);
+        if ($validator->fails())
+        {
+            return redirect()->back()->withErrors($validator)->withInput($request->all());
+        }
 
 
         $fileName = $this->uploadPhoto($request->photo, 'images\courses');

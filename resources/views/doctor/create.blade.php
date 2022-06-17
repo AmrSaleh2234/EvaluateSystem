@@ -4,43 +4,37 @@
         @if($errors->any())
             <div class=" alert alert-danger">{{$errors->first()}}</div>
         @endif
-        <form name="myform" action="{{route('doctor.store')}}" onsubmit='return validateForm()' method="post" class="d-flex flex-column p-5 add_doctor" >
+        <form  action="{{route('doctor.store')}}"  method="post" class="d-flex flex-column p-5 add_doctor" >
             @csrf
             <h4>Add Doctor</h4>
-            <input type="text" name="name" placeholder="  Enter Name" required>
-            <input type="email" name="email" placeholder="  Enter Email" required>
-            <input type="text" name="username" placeholder="  Enter Username" required>
-            <input type="password" name="password" placeholder="  Enter Password" required>
+            <input type="text" name="name" placeholder="  Enter Name" value="{{ old('name') }}"  class="form-control @error('name') is-invalid @enderror" >
+            @error('name')
+            <span class="invalid-feedback" role="alert" style="margin-top: -23px ;margin-bottom: 25px">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+            <input type="email" name="email" placeholder="  Enter Email" value="{{ old('email') }}"  class="form-control @error('email') is-invalid @enderror">
+            @error('email')
+            <span class="invalid-feedback" role="alert" style="margin-top: -23px ;margin-bottom: 25px">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+            <input type="text" name="username" placeholder="  Enter Username" value="{{ old('username') }}"  class="form-control @error('username') is-invalid @enderror">
+            @error('username')
+            <span class="invalid-feedback" role="alert" style="margin-top: -23px ;margin-bottom: 25px">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+            <input type="password" name="password" placeholder="  Enter Password" value="{{ old('password') }}"  class="form-control @error('password') is-invalid @enderror">
+            @error('password')
+            <span class="invalid-feedback" role="alert" style="margin-top: -23px ;margin-bottom: 25px">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
             <button class="btn btn-primary">submit</button>
 
         </form>
     </div>
-    <script>
-
-        function validateForm() {
-            let x = document.forms["myform"]["name"].value;
-            let y = document.forms["myform"]["email"].value;
-            let z = document.forms["myform"]["username"].value;
-            let e = document.forms["myform"]["password"].value;
 
 
-            if (x == "") {
-                alert("Name must be filled out");
-                return false;
-            }
-            if (y == "") {
-                alert("description must be filled out");
-                return false;
-            }
-            if (z == "") {
-                alert("creditHours must be filled out");
-                return false;
-            }
-            if (e == "") {
-                alert("announce must be filled out");
-                return false;
-            }
-
-        }
-    </script>
 @stop

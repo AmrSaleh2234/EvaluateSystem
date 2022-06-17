@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\user;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class DoctorController extends Controller
 {
@@ -45,6 +46,17 @@ class DoctorController extends Controller
      */
     public function store(Request $request)//admin store doctor
     {
+        $validator = Validator::make($request->all(),[
+            'name'=>'required',
+            'email'=>'required|email|unique:users,email',
+            'username'=>'required|unique:users,username',
+            'password'=>'required|string|min:8|max:20',
+            'photo'=>'mimes:jpeg,jpg,png,gif|required|max:10000',
+        ]);
+        if ($validator->fails())
+        {
+            return redirect()->back()->withErrors($validator)->withInput($request->all());
+        }
         user::create([
             'name'=>$request->name,
             'email'=>$request->email,
