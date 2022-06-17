@@ -21,10 +21,12 @@
                 <form class="edit_icon" id="form_userImg" method="post" action="{{route('profile.editPhoto',$user)}}"
                       enctype="multipart/form-data">
                     @csrf
-                    <label for="editPhotoUser">
-                        <i class="fa-solid fa-pen-to-square"></i>
-                    </label>
-                    <input type="file" id="editPhotoUser" name="photo" onchange="submitEditPhotoUser()">
+                    @if(auth()->user()->role != 0)
+                        <label for="editPhotoUser">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </label>
+                        <input type="file" id="editPhotoUser" name="photo" onchange="submitEditPhotoUser()">
+                    @endif
 
                 </form>
             </div>

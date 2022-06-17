@@ -156,6 +156,7 @@ class CourseController extends Controller
     {
         $search = $_GET['search'];
 
+
         $data = Course::where('name', 'LIKE', '%' . $search . '%')->get();
         return view('course.chooseCourse', compact('data'));
     }

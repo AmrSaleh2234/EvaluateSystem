@@ -9,7 +9,7 @@
         <div class="head_dashboard d-flex align-items-center justify-content-between">
             <h2>Choose Your Courses</h2>
             <form class="input-group rounded search_input  " id="form_search_course"
-                  action="{{url('course/searchCourse/')}}" type="get">
+                  action="{{route('course.searchCourse')}}" type="get">
 
                 <input type="search" class="form-control rounded" name="search" placeholder="Search" aria-label="Search"
                        aria-describedby="search-addon" id="search_course"/>

@@ -82,7 +82,7 @@
 
             </li>
         @endif
-            @if(auth()->user()->role ==1 || auth()->user()->role ==2)
+            @if( auth()->user()->role ==2)
             <li>
                 <a href="{{route('doctor.create')}}" class ="@if(isset($addDoctor))active @endif">
                     <i class="fa-solid fa-address-book nav_icon"></i>

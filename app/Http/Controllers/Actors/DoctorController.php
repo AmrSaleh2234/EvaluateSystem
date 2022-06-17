@@ -51,7 +51,7 @@ class DoctorController extends Controller
             'email'=>'required|email|unique:users,email',
             'username'=>'required|unique:users,username',
             'password'=>'required|string|min:8|max:20',
-            'photo'=>'mimes:jpeg,jpg,png,gif|required|max:10000',
+
         ]);
         if ($validator->fails())
         {

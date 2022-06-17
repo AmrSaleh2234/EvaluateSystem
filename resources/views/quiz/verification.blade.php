@@ -1,7 +1,7 @@
 @extends('layout.master2',['subject'=>"  ",'branch'=>'All Quizzes ','sub_branch'=>'','activeVerfication'=>'active'])
 @section('content')
     @if(isset($error))
-        <div class="alert-danger"> {{$error}}</div>
+        <div class="alert alert-danger"> {{$error}}</div>
     @endif
     <div class="container-fluid">
         <form method="POST" action="{{ route('quiz.view',['q'=>$id ,'course'=>$course]) }}">

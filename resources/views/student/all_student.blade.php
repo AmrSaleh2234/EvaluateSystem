@@ -6,7 +6,7 @@
 
             <div class="col-lg-4 col-md-6 col-sm-12">
                 <a  href ="{{route('student.show',$item)}}"class="d-flex card_student justify-content-between align-items-center">
-                    <img src="{{URL::asset('images/users/'.$item->photo)}}">
+                    <img src="data:image/jpeg;base64,{{ $item->photo }}" alt="img_data" width="320px" height="320px"  id="imgslot"/>
                     <h4>{{$item->name}}</h4>
                 </a>
             </div>

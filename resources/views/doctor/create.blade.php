@@ -2,7 +2,7 @@
 @section('content')
     <div class="container">
         @if($errors->any())
-            <div class=" alert alert-danger">{{$errors->first()}}</div>
+            <div class=" alert alert-success">{{$errors->first()}}</div>
         @endif
         <form  action="{{route('doctor.store')}}"  method="post" class="d-flex flex-column p-5 add_doctor" >
             @csrf

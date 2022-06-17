@@ -127,12 +127,13 @@ class QuizController extends Controller
     {
         $quiz =\App\Models\Quiz::find($id);
 
-        $currentDate = Carbon::now()->format('Y-m-d');
+        $currentDate = Carbon::now('EET')->format('Y-m-d');
         $currentTime = Carbon::now('EET')->format('H:i:s');
         $date = date('Y-m-d', strtotime("$quiz->date"));
         $time = date('H:i:s', strtotime("$quiz->start_time"));
         $timeEnd = Carbon::parse($time)
             ->addMinutes($quiz->number_clock)->format("H:i:s");
+
 
         if ($currentTime >=$time && $currentDate == $date && $currentTime<=$timeEnd)
             return view("quiz.verification",compact("id","course"));

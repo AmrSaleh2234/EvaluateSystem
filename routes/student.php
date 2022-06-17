@@ -7,7 +7,7 @@ use App\Http\Controllers\Actors\StudentController;
 Route::middleware(['Student'])->group(function (){
     Route::get('student',[StudentController::class,'index'])->name('student.index');
     Route::get('student/chooseCourse',[CourseController::class,'chooseCourse'])->name('course.choose_course');
-    Route::get('student/searchCourse/{search}',[CourseController::class,'searchCourse'])->name('course.searchCourse');
+    Route::get('student/searchCourse',[CourseController::class,'searchCourse'])->name('course.searchCourse');
     Route::get('student/showCourse/{course}',[CourseController::class,'showCourse'])->name('course.showCourse');
     Route::get('student/addCourseToStudent/{course}',[CourseController::class,'addCourseToStudent'])->name('course.addCourseToStudent');
     Route::get('student/deleteCourseToStudent/{course}',[CourseController::class,'deleteCourseToStudent'])->name('course.deleteCourseToStudent');

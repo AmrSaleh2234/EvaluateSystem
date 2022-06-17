@@ -36,7 +36,7 @@ class ProfileController extends Controller
        //return $user;
        $user->photo = $this->uploadPhoto($request->photo,'images/users');
        $user->update();
-       return redirect('profile/'.$user->id);
+       return redirect()->back();
        }
    else
        {

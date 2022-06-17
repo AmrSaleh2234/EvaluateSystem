@@ -87,9 +87,9 @@
 
 </div>
 
-{{--<div>--}}
-{{--    <button onclick="togg()" id="but">full screen to start the exam</button>--}}
-{{--</div>--}}
+<div>
+    <button onclick="togg()" id="but">full screen to start the exam</button>
+</div>
 @php
     //echo  $_COOKIE["fullscreen"];
 @endphp
@@ -114,11 +114,11 @@
             style="border: 0px none; margin-left: -125px; height: 450px; margin-top: -77px; width: 700px;">
     </iframe>
 </div>
-<section class="exam" id="qu">
+<section class="exam" id="qu" style="visibility: hidden">
     <div class="container">
         <h2 class="text-center p-5">{{$quiz->name}}</h2>
 
-        <form action="{{route('quiz.result',$quiz->id)}}" method="post" name="cartCheckout">
+        <form action="{{route('quiz.result',$quiz->id)}}" method="post" name="cartCheckout" >
             @csrf
 
             @foreach($quiz['question'] as $item )
@@ -156,14 +156,11 @@
     </div>
 </section>
 
-{{--        use Symfony\Component\Process\Process;--}}
-{{--       use Symfony\Component\Process\Exception\ProcessFailedException;--}}
-{{--        exec('py C:/xampp/htdocs/EvaluateSystem/public/proctoring-AI/eye_tracker.py')--}}
 
 
 <script src="{{URL::asset('js/script.js')}}"></script>
 <script src="{{URL::asset('js/bootstrap.bundle.min.js')}}"></script>
-{{--<script src="{{URL::asset('js/full.js')}}"></script>--}}
+<script src="{{URL::asset('js/full.js')}}"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script>
