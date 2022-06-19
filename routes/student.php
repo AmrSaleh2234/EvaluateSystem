@@ -6,15 +6,19 @@ use App\Http\Controllers\Actors\StudentController;
 
 Route::middleware(['Student'])->group(function (){
     Route::get('student',[StudentController::class,'index'])->name('student.index');
-    Route::get('student/chooseCourse',[CourseController::class,'chooseCourse'])->name('course.choose_course');
-    Route::get('student/searchCourse',[CourseController::class,'searchCourse'])->name('course.searchCourse');
-    Route::get('student/showCourse/{course}',[CourseController::class,'showCourse'])->name('course.showCourse');
-    Route::get('student/addCourseToStudent/{course}',[CourseController::class,'addCourseToStudent'])->name('course.addCourseToStudent');
-    Route::get('student/deleteCourseToStudent/{course}',[CourseController::class,'deleteCourseToStudent'])->name('course.deleteCourseToStudent');
+
+
     Route::post("window/create",[\App\Http\Controllers\WindowLog::class,'create'])->name('window.create');
 
 
 });
+
+Route::get('student/addCourseToStudent/{course}',[CourseController::class,'addCourseToStudent'])->name('course.addCourseToStudent');
+Route::get('student/deleteCourseToStudent/{course}',[CourseController::class,'deleteCourseToStudent'])->name('course.deleteCourseToStudent');
+Route::get('student/chooseCourse',[CourseController::class,'chooseCourse'])->name('course.choose_course');
+Route::get('student/searchCourse',[CourseController::class,'searchCourse'])->name('course.searchCourse');
+Route::get('student/showCourse/{course}',[CourseController::class,'showCourse'])->name('course.showCourse');
+
 //admin make this actions
 Route::middleware(['AdminAndDoctor'])->group(function (){
     Route::get('student/all_student',[StudentController::class,'allStudent'])->name('student.allStudent');

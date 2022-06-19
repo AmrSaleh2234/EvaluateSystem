@@ -29,6 +29,11 @@
                     </div>
                 @endif
             </div>
+            <div class="row  d-flex justify-content-center">
+                <a class="btn btn-primary w-25" href="{{route('course.choose_course')}}">
+                    Add Your Courses
+                </a>
+            </div>
         </div>
     </div>
 

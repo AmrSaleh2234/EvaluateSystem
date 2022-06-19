@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Window_log extends Model
 {
     use HasFactory;
-    protected $fillable=['quiz_id','user_id','window_event','description','credit_hours'];
+    protected $fillable=['quiz_id','user_id','window_event'];
     public function user()
     {
         return $this->belongsTo(User::class);

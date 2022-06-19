@@ -130,15 +130,13 @@
 
 
         @if(isset($course))
-            <a href="{{route('course.showQuizzes',$course)}}" class="@if(isset($activeQuize)){{$activeQuize}}@endif">Quize</a>
+            <a href="{{route('course.showQuizzes',$course)}}" class="@if(isset($activeQuize)){{$activeQuize}}@endif">Quizzes</a>
         @endif
 
     </div>
     <header class="head_page d-flex align-items-center">
         <i class="fa-solid fa-bars"></i>
         <h3>{{$subject . $branch .$sub_branch}}</h3>
-
-
     </header>
     <div class="content2">
         @yield('content')
