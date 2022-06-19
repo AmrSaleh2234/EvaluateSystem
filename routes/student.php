@@ -12,7 +12,7 @@ Route::middleware(['Student'])->group(function (){
 
 
 });
-
+// student and doctor make this routes
 Route::get('student/addCourseToStudent/{course}',[CourseController::class,'addCourseToStudent'])->name('course.addCourseToStudent');
 Route::get('student/deleteCourseToStudent/{course}',[CourseController::class,'deleteCourseToStudent'])->name('course.deleteCourseToStudent');
 Route::get('student/chooseCourse',[CourseController::class,'chooseCourse'])->name('course.choose_course');

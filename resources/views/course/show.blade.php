@@ -3,10 +3,12 @@
 @section('content')
     <div class="container-fluid subject">
         <div class="buttons d-flex flex-row-reverse">
-            <a class="add" href="{{route('course.addUpdateDoctorCourse',$course)}}">
-                <h4 class="d-inline">Add Doctor And Update In Course</h4>
-                <i class="fa-solid fa-square-plus text-primary"></i>
-            </a>
+            @if(auth()->user()->role ==2)
+                <a class="add" href="{{route('course.addUpdateDoctorCourse',$course)}}">
+                    <h4 class="d-inline">Add Doctor And Update In Course</h4>
+                    <i class="fa-solid fa-square-plus text-primary"></i>
+                </a>
+            @endif
             <a class="delete" href="{{route('course.delete',$course)}}">
 
                 <h4 class="text-danger d-inline">
