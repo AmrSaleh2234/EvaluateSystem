@@ -14,7 +14,7 @@
             </div>
 
             <div class="col-lg-4">
-                <img src="{{URL::asset('images/users/'.$data->photo)}}">
+                <img src="data:image/jpeg;base64,{{ $data->photo}}" alt="img_data" width="320px" height="320px"  id="imgslot"/><br>
             </div>
             <div class="col-lg-8">
                 <div class="data">

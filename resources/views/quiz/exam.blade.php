@@ -78,6 +78,12 @@
             opacity: 0;
         }
     }
+    #fullScreen
+    {
+        display: flex;
+        justify-content: center;
+        margin-top: 172px;
+    }
 </style>
 
 <body>
@@ -87,8 +93,8 @@
 
 </div>
 
-<div>
-    <button onclick="togg()" id="but">full screen to start the exam</button>
+<div id ="fullScreen">
+    <button onclick="togg()" id="but" class="btn btn-primary m-auto">full screen to start the exam</button>
 </div>
 @php
     //echo  $_COOKIE["fullscreen"];

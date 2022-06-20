@@ -6,7 +6,7 @@
         <div class="container-fluid addQuizAndQuestions">
             <header class="head_page d-flex align-items-center">
                 <i class="fa-solid fa-bars"></i>
-                <h3>Artificial Intelligence/ quiz / Add quiz</h3>
+                <h3>{{$course->name}}/ quiz / Add quiz</h3>
 
             </header>
             <div class="row add_quiz">
@@ -33,7 +33,7 @@
                     @enderror
                 </div>
                 <div class="col-2">
-                    <label>Booking Dates</label>
+                    <label> Date</label>
                     <br>
                     <input type="date" name="date" class="@error('date') is-invalid @enderror" placeholder="Type here"
                            value="{{ old('date') }}" required>.
