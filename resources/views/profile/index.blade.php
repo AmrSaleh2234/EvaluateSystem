@@ -17,7 +17,12 @@
 
         <div class="row">
             <div class="col-lg-3 col-sm-12 img_profile_container" >
-                <img src="{{URL::asset('images/users/'.$user->photo)}}" id="image_profile">
+                @if(auth()->user()->role==0)
+                    <img src="data:image/jpeg;base64,{{ $user->photo}}" alt="img_data" id="image_profile"/><br>
+                @else
+                    <img src="{{URL::asset('images/users/'.$user->photo)}}" id="image_profile">
+                @endif
+
                 <form class="edit_icon" id="form_userImg" method="post" action="{{route('profile.editPhoto',$user)}}"
                       enctype="multipart/form-data">
                     @csrf

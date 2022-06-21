@@ -225,7 +225,7 @@
                 ctx.drawImage( stream, 0, 0, capture.width, capture.height );
 
                 img.src		= capture.toDataURL( "image/png" );
-                img.width	= 433;
+                img.width	= 370;
                 img.height	= 320;
                 //console.log(capture.toDataURL( "image/png" ));
                 snapshot.innerHTML = '';

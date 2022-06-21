@@ -24,7 +24,7 @@ class WindowLog extends Controller
     {
         $window = $user->window->where('quiz_id', '=', "$quiz->id");
         $proctoring = $user->proctoring->where('quiz_id', '=', "$quiz->id");
-        $person_status = $proctoring->where("person_status", "1");
+        $person_status = $proctoring->where("person_status", "2");
         $mobile_detection = $proctoring->where("phone_detection", "1");
         $voice_db = $user->proctoring->where('quiz_id', '=', "$quiz->id");
 

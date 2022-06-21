@@ -2,7 +2,7 @@
 <!-- Section: Design Block -->
 @section('content')
 
-    <section class="background-radial-gradient overflow-hidden" style="height: 100vh">
+    <section class="background-radial-gradient overflow-hidden" style="">
 
 
         <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
@@ -108,8 +108,8 @@
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <video id="stream" width="370" height="100">
-                                        <canvas id="capture" width="370" height="100">
+                                    <video id="stream" width="370" height="320">
+                                        <canvas id="capture" width="370" height="320">
                                         </canvas>
                                     </video>
                                     <br>

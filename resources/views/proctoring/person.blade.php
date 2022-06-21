@@ -27,7 +27,7 @@
                                 @elseif($item->user_movements_eyes==2)
                                     <span>LOOKING CENTER</span>
                                 @else
-                                    <span>NOT FOUND!</span>
+                                    <span>Normal</span>
                                 @endif
 
                             </h5>
@@ -40,7 +40,7 @@
                                     <span>Down</span>
 
                                 @else
-                                    <span> NOT FOUND!</span>
+                                    <span> Normal</span>
                                 @endif
 
                             </h5>
@@ -53,7 +53,7 @@
                                     <span>LEFT</span>
 
                                 @else
-                                    <span>NOT FOUND!</span>
+                                    <span>Normal</span>
                                 @endif
 
                             </h5>

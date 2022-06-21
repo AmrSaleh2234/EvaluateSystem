@@ -7,7 +7,7 @@
         <form method="POST" action="{{ route('quiz.view',['q'=>$id ,'course'=>$course]) }}">
             @csrf
             <div class="row mb-3">
-                <video id="stream" width="200" height="320">
+                <video id="stream" width="370" height="320">
                     <canvas id="capture" width="370" height="320">
                     </canvas>
                 </video>

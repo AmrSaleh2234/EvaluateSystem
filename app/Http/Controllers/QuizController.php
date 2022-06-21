@@ -135,7 +135,7 @@ class QuizController extends Controller
             ->addMinutes($quiz->number_clock)->format("H:i:s");
 
 
-        if ($currentTime >=$time && $currentDate == $date && $currentTime<=$timeEnd)
+        if ($currentTime >=$time && $currentDate == $date )
             return view("quiz.verification",compact("id","course"));
         else
             return redirect()->back()->withErrors(['msg' => 'quiz time not start']);
