@@ -5,7 +5,7 @@
             @foreach($data as $item)
 
                 <div class="col-lg-4 col-md-6 col-sm-12">
-                    <a  href ="{{route('student.show',$item)}}"class="d-flex card_student justify-content-between align-items-center">
+                    <a  href ="{{route('doctor.show',$item)}}"class="d-flex card_student justify-content-between align-items-center">
                         <img src="{{URL::asset('images/users/'.$item->photo)}}">
                         <h4>{{$item->name}}</h4>
                     </a>

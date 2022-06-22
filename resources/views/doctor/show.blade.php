@@ -33,7 +33,7 @@
             @if(count($data->course))
                 @foreach($data->course as $item)
                     <div class="col-lg-4 col-md-6 col-sm-12">
-                        <a href="{{route('student.showCourse',['course'=>$item])}}" class="special-link">
+                        <a href="{{route('course.show',['course'=>$item])}}" class="special-link">
                             <div class="card dashboard_card" style="width: 18rem;">
                                 <img src="{{URL::asset('images/courses/'.$item->photo)}}" class="card-img-top"
                                      alt="...">
@@ -42,7 +42,7 @@
                                     <p class="card-text">{{$item->description}}</p>
                                     @foreach($item->doctor as $i)
                                         <div class="profile_dashboard">
-                                            <img src="{{URL::asset('images/courses/'.$i->photo)}}">
+                                            <img src="{{URL::asset('images/users/'.$i->photo)}}">
                                             <div class="profile_name">{{$i->name}}</div>
                                         </div>
                                     @endforeach

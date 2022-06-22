@@ -1,5 +1,5 @@
 <?php header('Access-Control-Allow-Origin: *'); ?>
-<!doctype html>
+    <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -98,6 +98,7 @@
 </div>
 @php
     //echo  $_COOKIE["fullscreen"];
+$i=1
 @endphp
 <div class="card-body">
 
@@ -128,8 +129,9 @@
             @csrf
 
             @foreach($quiz['question'] as $item )
+
                 <div class="card w-100 p-4" style="width: 18rem;">
-                    {{$item->body}}
+                   <b>{{$i++}} - {{  $item->body}}</b>
                     <div class="card-body">
                         @foreach($item->option as $o)
                             <div class="d-flex align-items-center ">
@@ -211,7 +213,7 @@
                     analyser = audioContext.createAnalyser();
                     microphone = audioContext.createMediaStreamSource(mediaStream);
                     javascriptNode = audioContext.createScriptProcessor(2048, 1, 1);
-                   // document.querySelectorAll("video, audio").forEach( elem => muteMe(elem) );
+                    // document.querySelectorAll("video, audio").forEach( elem => muteMe(elem) );
                     analyser.smoothingTimeConstant = 0.8;
                     analyser.fftSize = 1024;
 
@@ -296,8 +298,8 @@
         startStreaming();
         captureSnapshot();
         var timer ={{$quiz->number_clock}};
-            timer*=60*1000;
-            console.log(timer)
+        timer*=60*1000;
+        console.log(timer)
         window.setTimeout(document.cartCheckout.submit.bind(document.cartCheckout), timer);
     }
 
