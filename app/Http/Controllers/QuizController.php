@@ -7,8 +7,10 @@ use App\Models\option;
 use App\Models\Question;
 use App\Models\Quiz;
 use App\Models\user;
+
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Nette\Utils\DateTime;
 use Symfony\Component\Process\Process;
@@ -125,6 +127,13 @@ class QuizController extends Controller
 
     public function verification($id, $course)
     {
+
+
+        if(count(Quiz::find($id)->user->where('id',auth()->user()->id)))
+        {
+            return redirect()->back()->withErrors(['msg' => 'you have taken this exam ']);
+        }
+
         $quiz =\App\Models\Quiz::find($id);
 
         $currentDate = Carbon::now('EET')->format('Y-m-d');
