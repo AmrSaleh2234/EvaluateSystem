@@ -18,14 +18,14 @@
                             <h5 class="h5">
                                 <span class="fas fa-eye"></span> EYES:
 
-                                @if($item->user_movements_eyes==1)
-                                    <span> BLINKING</span>
-                                @elseif($item->user_movements_eyes==4)
-                                    <span> LOOKING RIGHT</span>
+                                @if($item->user_movement_eyes==1)
+                                    <span class="text-danger"> BLINKING</span>
+                                @elseif($item->user_movement_eyes==4)
+                                    <span class="text-danger"> LOOKING RIGHT</span>
                                 @elseif($item->user_movements_eyes==3)
-                                    <span> LOOKING LEFT</span>
-                                @elseif($item->user_movements_eyes==2)
-                                    <span>LOOKING CENTER</span>
+                                    <span class="text-danger"> LOOKING LEFT</span>
+                                @elseif($item->user_movement_eyes==2)
+                                    <span class="text-danger">LOOKING CENTER</span>
                                 @else
                                     <span>Normal</span>
                                 @endif
@@ -34,10 +34,10 @@
                             <h5 class="h5">
                                 <span class="fas fa-user"></span> HEAD [UP/DOWN]:
 
-                                @if($item->user_movements_updown==1)
-                                    <span>UP</span>
-                                @elseif($item->user_movements_updown==2)
-                                    <span>Down</span>
+                                @if($item->user_movement_updown==1)
+                                    <span class="text-danger">UP</span>
+                                @elseif($item->user_movement_updown==2)
+                                    <span class="text-danger">Down</span>
 
                                 @else
                                     <span> Normal</span>
@@ -47,10 +47,10 @@
                             <h5 class="h5">
                                 <span class="fas fa-user"></span> HEAD [Right/Left]:
 
-                                @if($item->user_movements_ir==3)
-                                    <span>RIGHT</span>
-                                @elseif($item->user_movements_ir==4)
-                                    <span>LEFT</span>
+                                @if($item->user_movement_ir==3)
+                                    <span class="text-danger">RIGHT</span>
+                                @elseif($item->user_movement_ir==4)
+                                    <span class="text-danger">LEFT</span>
 
                                 @else
                                     <span>Normal</span>
